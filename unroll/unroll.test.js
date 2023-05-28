@@ -21,8 +21,8 @@ describe("#unroll", function () {
 
 });
 
-describe('should return correct value', function () {
-  it('should return return a single array with values of the input', function () {
+describe('should return a single array with values', function () {
+  it('should return return values in a spiral', function () {
     expect(unroll(square)).toEqual([1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]);
   })
 })
