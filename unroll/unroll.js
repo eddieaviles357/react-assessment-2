@@ -26,31 +26,43 @@ function unroll(squareArray) {
      * bottom to top
      */
     while( (rowStart <= rowEnd) && (colStart <= colEnd) ) {
+        iterateRight();
+        iterateDown();
+        iterateLeft();
+        iterateUp();
+    };
+    function iterateRight() {
         // start from the left and go right
         for(let i = colStart; i <= colEnd; i++) {
             result.push( squareArray[rowStart][i] );
         };
         // shrink towards the bottom since we visited the top
         rowStart++;
+    }
+    function iterateDown() {
         // start from the top and go down
         for(let i = rowStart; i <= rowEnd; i++) {
             result.push(squareArray[i][colEnd])
         };
         // shrink to the left since we visited the right
         colEnd--;
+    }
+    function iterateLeft() {
         // start from the right and go left
         for(let i = colEnd; i >= colStart; i--) {
             result.push(squareArray[rowEnd][i])
         };
         // shrink towards top since we visited the bottom
         rowEnd--;
+    }
+    function iterateUp() {
         // start from the bottom and go up
         for(let i = rowEnd; i >= rowStart; i--) {
             result.push(squareArray[i][colStart])
         };
         // shrink to the right since we visited the left
         colStart++;
-    };
+    }
     return result;
 };
 
