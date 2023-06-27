@@ -38,14 +38,14 @@ function App() {
               <Home snacks={snacks} />
             </Route>
             <Route exact path="/snacks">
-              <Menu snacks={snacks} isSnack={true} title="Snacks" />
+              <Menu snacks={snacks} title="Snacks" />
             </Route>
             <Route path="/snacks/:id">
               <Snack items={snacks} cantFind="/snacks" />
             </Route>
 
             <Route exact path="/drinks">
-              <Menu snacks={drinks} isSnack={false} title="Drinks" />
+              <Menu snacks={drinks} title="Drinks" />
             </Route>
             <Route path="/drinks/:id">
               <Snack items={drinks} cantFind="/drinks" />
