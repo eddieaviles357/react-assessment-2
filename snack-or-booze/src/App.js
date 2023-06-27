@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Routes from './Routes';
+import Main from './Main';
 import "./App.css";
 import SnackOrBoozeApi from "./Api";
 
@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className="App">
-    <Routes snacks={snacks} drinks={drinks}/>
+    <Main snacks={snacks} drinks={drinks}/>
     </div>
   );
 }
