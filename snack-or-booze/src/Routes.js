@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import Menu from "./FoodMenu";
 import Snack from "./FoodItem";
+import SnacksDrinksContext from "./SnacksDrinksContext";
 
+export default function Main() {
+    const { snacks, drinks } = useContext(SnacksDrinksContext);
 
-export default function Main({snacks, drinks}) {
     return (
         <Switch>
             <Route exact path="/">
