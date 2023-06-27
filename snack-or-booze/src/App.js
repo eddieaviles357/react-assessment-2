@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import Main from './Main';
 import "./App.css";
 import SnackOrBoozeApi from "./Api";
+import SnacksDrinksContext from "./SnacksDrinksContext";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [snacks, setSnacks] = useState([]);
   const [drinks, setDrinks] = useState([]);
+
 
   useEffect(() => {
     async function getSnacks() {
@@ -25,7 +27,9 @@ function App() {
 
   return (
     <div className="App">
-    <Main snacks={snacks} drinks={drinks}/>
+    <SnacksDrinksContext.Provider value={{snacks, drinks}}>
+      <Main />
+    </SnacksDrinksContext.Provider>
     </div>
   );
 }
