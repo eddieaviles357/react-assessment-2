@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./FoodMenu.css";
 import {
   Card,
@@ -10,7 +10,8 @@ import {
   ListGroupItem
 } from "reactstrap";
 
-function FoodMenu({ snacks, isSnack }) {
+function FoodMenu({ snacks }) {
+  const { pathname } = useLocation();
   return (
     <section className="col-md-4">
       <Card>
@@ -24,7 +25,7 @@ function FoodMenu({ snacks, isSnack }) {
           </CardText>
           <ListGroup>
             {snacks.map(snack => (
-              <Link to={`${isSnack ? '/snacks/' : '/drinks/'}${snack.id}`} key={snack.id}>
+              <Link to={`${pathname}/${snack.id}`} key={snack.id}>
                 <ListGroupItem>{snack.name}</ListGroupItem>
               </Link>
             ))}
