@@ -4,8 +4,6 @@ import { Card, CardBody, CardTitle, CardText } from "reactstrap";
 
 function FoodItem({ items, cantFind }) {
   const { id } = useParams();
-  console.log(id)
-  console.log(useParams())
   
   let snack = items.find(snack => snack.id === id);
   if (!snack) return <Redirect to={cantFind} />;
