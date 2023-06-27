@@ -10,8 +10,8 @@ function FoodItem({ items, cantFind }) {
 
   return (
     <section>
-      <Card>
-        <CardBody>
+      <Card className="border">
+        <CardBody >
           <CardTitle className="font-weight-bold text-center">
             {snack.name}
           </CardTitle>
