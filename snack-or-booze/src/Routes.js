@@ -4,6 +4,7 @@ import Home from "./Home";
 import Menu from "./FoodMenu";
 import Snack from "./FoodItem";
 import SnacksDrinksContext from "./SnacksDrinksContext";
+import NotFound from "./NotFound";
 
 export default function Main() {
     const { snacks, drinks } = useContext(SnacksDrinksContext);
@@ -26,7 +27,7 @@ export default function Main() {
                 <Snack items={drinks} cantFind="/drinks" />
             </Route>
             <Route>
-                <p>Hmmm. I can't seem to find what you want.</p>
+                <NotFound />
             </Route>
         </Switch>
     )
