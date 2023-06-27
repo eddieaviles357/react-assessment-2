@@ -5,7 +5,6 @@ import SnacksDrinksContext from "./SnacksDrinksContext";
 
 function Home() {
   const { snacks, drinks } = useContext(SnacksDrinksContext);
-  
   return (
     <section className="col-md-8">
       <Card>
