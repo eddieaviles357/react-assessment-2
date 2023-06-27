@@ -11,18 +11,25 @@ import axios from "axios";
 
 
 class SnackOrBoozeApi {
-
+  // get snacks from db
   static async getSnacks() {
-    // const result = await axios.get(`${BASE_API_URL}/snacks`);
     return snacks;
   }
-
+ // get drinks from db
   static async getDrinks() {
     return drinks;
   }
+  // add snacks to db
+  static async addSnacks(data) {
+    snacks.push(data);
+  }
+  // add drinks to db
+  static async addDrinks(data) {
+    drinks.push(data);
+  }
 }
 
-// json-server will not work so we just sending data this way.
+// json-server will not work so we just sending data without using axios.
 const snacks = [
   {
     "id": "nachos",
