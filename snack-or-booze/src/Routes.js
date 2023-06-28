@@ -5,6 +5,7 @@ import Menu from "./FoodMenu";
 import Snack from "./FoodItem";
 import SnacksDrinksContext from "./SnacksDrinksContext";
 import NotFound from "./NotFound";
+import AddItemForm from "./AddItemForm";
 
 export default function Main() {
     const { snacks, drinks } = useContext(SnacksDrinksContext);
@@ -25,6 +26,9 @@ export default function Main() {
             </Route>
             <Route path="/drinks/:id">
                 <Snack items={drinks} cantFind="/drinks" />
+            </Route>
+            <Route path="/add">
+                <AddItemForm />
             </Route>
             <Route>
                 <NotFound />
