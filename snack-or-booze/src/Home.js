@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
-import { Card, CardBody, CardTitle } from "reactstrap";
-import Counter from "./Counter";
+import { Card, CardBody, CardTitle, CardText } from "reactstrap";
 import SnacksDrinksContext from "./SnacksDrinksContext";
 
 function Home() {
@@ -12,9 +11,13 @@ function Home() {
           <CardTitle tag='h3'>
               Welcome to Silicon Valley's premier dive cafe!
           </CardTitle>
+          <CardText tag="h5">
+            Menu items:
+            <div>Snacks: {snacks.length}</div> 
+            <div>Drinks: {drinks.length}</div>
+          </CardText>
         </CardBody>
       </Card>
-      <Counter snackCount={snacks.length} drinkCount={drinks.length} />
     </section>
   );
 }
