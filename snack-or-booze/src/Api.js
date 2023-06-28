@@ -11,20 +11,49 @@ import axios from "axios";
 
 
 class SnackOrBoozeApi {
+  // proper way to fetch data with axios
+  // static async getSnacks() {
+  //   let res = await axios.get(`${BASE_API_URL}/snacks`,{
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Access-Control-Allow-Origin': '*'
+  //     },
+  //   });
+  //   return res.data;
+  // }
   // get snacks from db
   static async getSnacks() {
     return snacks;
   }
+  // proper way to fetch data with axios
+  // static async getDrinks() {
+  //   let res = await axios.get(`${BASE_API_URL}/drinks`,{
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Access-Control-Allow-Origin': '*'
+  //     },
+  //   });
+  //   return res.data;
+  // }
  // get drinks from db
   static async getDrinks() {
     return drinks;
   }
+  static async addItem(type, data) {
+    // this will be the way to use the api if server is running
+    // await axios.post(`${BASE_API_URL}/${type}`, data);
+    if(type === 'drinks') await SnackOrBoozeApi.addDrinks(data);
+    if(type === 'snacks') await SnackOrBoozeApi.addSnacks(data);
+    return;
+  }
   // add snacks to db
   static async addSnacks(data) {
+    console.log('added snacks');
     snacks.push(data);
   }
   // add drinks to db
   static async addDrinks(data) {
+    console.log('added drinks');
     drinks.push(data);
   }
 }
