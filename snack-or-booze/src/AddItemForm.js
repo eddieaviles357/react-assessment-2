@@ -13,6 +13,7 @@ import {
 import "./AddItemForm.css"
 
 export default function AddItemForm() {
+    // extract addItem function from our context
     const { addItem } = useContext(SnacksDrinksContext);
 
     const [form, setForm] = useState({
@@ -22,7 +23,7 @@ export default function AddItemForm() {
         recipe: "",
         serve: ""
       });
-      
+    // used to reroute user to home page / when we add item
     const history = useHistory();
 
     const handleChange = evt => {
@@ -36,11 +37,14 @@ export default function AddItemForm() {
       const handleSubmit = evt => {
         evt.preventDefault();
         const { type, name, description, recipe, serve } = form;
+        // cannot continue if fields are null
         if(!type || !name || !description || !recipe || !serve) {
             alert("Please enter field");
             return;
         }
+        // fields are valid lets add the item
         addItem({ type, name, description, recipe, serve });
+        // route user to home page
         history.push("/");
       }
     // desctructure fields so we can use on our form values

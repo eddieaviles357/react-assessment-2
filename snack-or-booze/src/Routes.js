@@ -7,6 +7,7 @@ import SnacksDrinksContext from "./SnacksDrinksContext";
 import NotFound from "./NotFound";
 import AddItemForm from "./AddItemForm";
 
+// Handles routing
 export default function Main() {
     const { snacks, drinks } = useContext(SnacksDrinksContext);
 

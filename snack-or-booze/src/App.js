@@ -10,12 +10,13 @@ function App() {
   const [snacks, setSnacks] = useState([]);
   const [drinks, setDrinks] = useState([]);
 
-
+  // get data from fake server
+  // isLoading is a dependency so we can render app and update data
   useEffect(() => {
     async function getSnacks() {
       let snacks = await SnackOrBoozeApi.getSnacks();
-      setSnacks(snacks);
       let drinks = await SnackOrBoozeApi.getDrinks();
+      setSnacks(snacks);
       setDrinks(drinks)
       setIsLoading(false);
     }
@@ -36,6 +37,8 @@ function App() {
     return <p>Loading &hellip;</p>;
   }
 
+  // Render the application and pass our props down to all the components using
+  // context object
   return (
     <div className="App">
     <SnacksDrinksContext.Provider value={{snacks, drinks, addItem}}>

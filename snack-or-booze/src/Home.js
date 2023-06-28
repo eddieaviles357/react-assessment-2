@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Card, CardBody, CardTitle, CardText } from "reactstrap";
 import SnacksDrinksContext from "./SnacksDrinksContext";
 
+// This is what the Home page will display
 function Home() {
   const { snacks, drinks } = useContext(SnacksDrinksContext);
   return (

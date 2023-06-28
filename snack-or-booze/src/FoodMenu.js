@@ -10,6 +10,7 @@ import {
   ListGroupItem
 } from "reactstrap";
 
+// Displays our menu
 function FoodMenu({ snacks }) {
   const { pathname } = useLocation();
   return (
